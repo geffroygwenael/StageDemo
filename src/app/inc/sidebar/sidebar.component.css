@@ -1,16 +1,10 @@
-.sidebar {
-  height:calc(100vh - 80px);
-  padding: 20px 0;
-  background-color: var(--mid-purple);
-}
-
-.sidebar a {
+a {
   display:block;
   padding:10px 30px;
   border-left: 3px solid transparent;
 }
 
-.sidebar fa-icon
+fa-icon
 {
   display:inline-block;
   width:20px;
@@ -20,7 +14,7 @@
 
 }
 
-.sidebar a:hover {
+a:hover {
   background-color: var(--light-purple);
   border-left:3px solid white;
 }

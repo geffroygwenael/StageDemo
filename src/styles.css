@@ -1,8 +1,11 @@
+/**************************************************************
+ *                      FONTS & ROOT                          *
+ **************************************************************/
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap');
 
 :root {
-  /*color */
+/* colors */
   --dark-purple     : #51438F;
   --mid-purple      : #6F5CC3;
   --light-purple    : #7D6CC9;
@@ -13,34 +16,102 @@
   --active-color    : #64a366;
   --inactive-bubble : #F6CFCC;
   --inactive-color  : #d4675d;
-
-  /* fonts */
+/* fonts */
   --ft-text   : 'Nunito', sans-serif;
   --font-aw   : 'Helvetica', FontAwesome, sans-serif;
   --ft-title  : 'Antonio', sans-serif;
 }
 
+* { box-sizing: border-box; padding: 0; margin: 0; font-family: var(--ft-text); }
 
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-  font-family: var(--ft-text);
-}
+/**************************************************************
+ *                    APPLICATION STRUCTURE                    *
+ **************************************************************/
+/* html elements */
+table { width: 100%; table-layout: auto;  padding:10px 20px; }
+th    { padding:10px 0;}
+td    { padding:5px 0;}
 
-
+/* classes */
 .container {
-  display: -ms-grid;
-  display: grid;
+  display: -ms-grid;display: grid;
   grid-template-columns: 200px 1fr;
   grid-template-rows: 80px 1fr;
 }
 
-a {
-  color: white;
-  text-decoration: none;
+.panel_buttons        { width:fit-content; padding:0 20px;margin: 0 0 10px 0;}
+.panel_buttons button { width:100px;padding: 15px 5px;position:relative; }
+
+.user_picture       {width: 40px;height: 40px;}
+.operations         {margin: 0 1em;}
+.active, .inactive, .ad_btn_login  {display:block;padding:2px 5px;margin:auto;}
+.active, .inactive  {width: 60px;}
+.ad_btn_login       {width:50px;}
+/* ids */
+
+/* pseudo-elements */
+.selected:after {
+  content: "";
+  display: block;
+  height: 2px;width: 100px;
+  position: absolute;bottom: 0;left: 0;
 }
 
-a:hover, a:focus, a:active, a:visited {
-  color: white;
+/* animations  */
+@keyframes onSelect {
+  from { width: 0 ; left: 50px; }
+  to   { width: 100px ; left: 0; }
 }
+
+
+/**************************************************************
+ *                      APPLICATION STYLE                     *
+ **************************************************************/
+/* html elements */
+a     { color: white; text-decoration: none;}
+button {border:none;}
+
+
+thead, thead a { text-align: left ; color:grey;font-size: 14px;}
+td    { border-bottom: 0.1rem solid rgba(0,0,0,0.02); }
+
+
+
+
+
+table, .panel_buttons {
+  border-spacing: 0;
+  border-radius: 5px;
+  background-color: var(--w-bg-color);
+  box-shadow: 0 0 5px rgba(150,150,150,0.2);
+  font-size:12px;
+}
+
+/* classes */
+.panel_buttons button {background-color: transparent;}
+.selected             {font-weight: bold}
+.td_centered          {text-align: center}
+.user_picture         {object-fit: cover;-o-object-fit:cover;border-radius: 5px;}
+.operations           {color: var(--light-purple);font-size: 15px;}
+.active, .inactive    {border-radius: 8px;text-transform: capitalize;font-weight: bold}
+.active               {background-color: var(--active-bubble); color: var(--active-color);}
+.inactive             {background-color: var(--inactive-bubble); color: var(--inactive-color);}
+.ad_btn_login {
+  background-color: var(--mid-purple);
+  border-radius: 5px;
+  text-align: center;
+  font: 11px var(--ft-text);
+}
+
+
+
+
+/* ids */
+
+
+
+/* pseudo-elements */
+.selected:after { background: var(--mid-purple); animation: onSelect 0.2s linear; }
+a:hover, button:hover { cursor: pointer;}
+
+

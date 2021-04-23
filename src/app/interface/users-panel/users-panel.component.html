@@ -1,15 +1,36 @@
+<div class="panel_buttons">
+<button [ngClass]="memberBtn" (click)="getAllUsers()" title="See all members">Members</button>
+<button [ngClass]="adminBtn" (click)="getAllAdmins()" title="See all admins">Admins</button>
+</div>
 
 <table>
   <thead>
   <tr>
-    <th>ID</th>
-    <th>NAME</th>
+    <th>Photo</th>
+    <th> <a (click)="sortBy('name')">Member name</a> </th>
+    <th> <a (click)="sortBy('mobile')">Mobile</a> </th>
+    <th> <a (click)="sortBy('email')">Email</a> </th>
+    <th class="td_centered">Status</th>
+    <th class="td_centered">Operation</th>
+    <th class="td_centered">Action</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let u of users">
-    <td>{{u.id}}</td>
+  <tr *ngFor="let u of displayUsers">
+    <td><img class="user_picture" src="{{u.picture}}" alt=""></td>
     <td>{{u.name}}</td>
+    <td>{{u.mobile}}</td>
+    <td>{{u.email}}</td>
+    <td class="td_centered">
+      <span class="active" *ngIf="u.isActive ; else elseBlock">active</span>
+      <ng-template #elseBlock> <span class="inactive">inactive</span></ng-template>
+    </td>
+    <td class="td_centered">
+      <a class="operations" href="#" title="View user {{u.name}} profile"><fa-icon [icon]="faView"></fa-icon></a>
+      <a class="operations" href="#" title="Edit user {{u.name}}"><fa-icon [icon]="faEdit"></fa-icon></a>
+      <a class="operations" href="#" title="Delete user {{u.name}}"><fa-icon [icon]="faTrash"></fa-icon></a>
+    </td>
+    <td class="td_centered"><a class="ad_btn_login" href="#">login</a></td>
   </tr>
   </tbody>
 </table>

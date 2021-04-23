@@ -25,10 +25,7 @@ input {width: 375px;padding: 10px 15px;}
   grid-template-rows: 1fr 1fr;
 }
 
-.user_picture {
-  width: 40px;height: 40px;
-  object-fit: cover;-o-object-fit:cover;
-  float: left;}
+
 
 .nu_name, .nu_role {grid-column: 1;padding: 0 10px;height: 20px;}
 .nu_name {grid-row: 1;}
@@ -71,7 +68,7 @@ li {list-style: none;}
   color: white;
 }
 
-.user_picture {border-radius: 5px;}
+.user_picture {float:left;}
 
 .nu_name,
 .nu_role {

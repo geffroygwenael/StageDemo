@@ -1,0 +1,35 @@
+<nav class="navbar">
+  <ul>
+    <li class="nav_logo">
+      <a href="#" title="logo of LivinFranceProject">Logo</a>
+    </li>
+    <li class="input">
+      <input type="search"
+             name="navbar_search"
+             id="navbar_search"
+             class="navbar_inp_search"
+             placeholder="&#xF002; Search...">
+    </li>
+    <li class="nav_notification">
+      <button class="nav_btn_notification" type="button" title="See your notifications">
+        <fa-icon [icon]="faNotifBell"></fa-icon>
+      </button>
+    </li>
+    <li>
+      <img src="https://cdn.dribbble.com/users/4145825/screenshots/8095891/media/5b2e4615118433404f7d09a41ff4100f.jpg?compress=1&resize=400x300"
+           alt="Your profile picture"
+           title="Your profile picture"
+           class="user_picture"/>
+
+      <div class="nav_usermenu">
+        <span class="nu_name">Luke Asote</span>
+        <span class="nu_role">Admin for associations</span>
+        <span class="nu_menu">
+          <button class="nav_btn_usermenu" type="button" title="Your user menu">
+            <fa-icon [icon]="faArrow"></fa-icon>
+          </button>
+        </span>
+      </div>
+    </li>
+  </ul>
+</nav>

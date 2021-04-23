@@ -1,0 +1,3 @@
+app-navbar      {grid-column: 1 / 3 ; grid-row: 1;}
+app-sidebar     {grid-column: 1 / 2 ; grid-row: 2 / 2;}
+app-users-panel {grid-column: 2 ; grid-row: 2;}

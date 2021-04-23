@@ -1,1 +1,46 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Antonio:wght@200&display=swap');
+
+:root {
+  /*color */
+  --dark-purple     : #51438F;
+  --mid-purple      : #6F5CC3;
+  --light-purple    : #7D6CC9;
+  --w-bg-color      : #FFFFFF;
+  --bg-color        : #F8F8F8;
+  --title-color     : #0E2348;
+  --active-bubble   : #D1EAD2;
+  --active-color    : #64a366;
+  --inactive-bubble : #F6CFCC;
+  --inactive-color  : #d4675d;
+
+  /* fonts */
+  --ft-text   : 'Nunito', sans-serif;
+  --font-aw   : 'Helvetica', FontAwesome, sans-serif;
+  --ft-title  : 'Antonio', sans-serif;
+}
+
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: var(--ft-text);
+}
+
+
+.container {
+  display: -ms-grid;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 80px 1fr;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover, a:focus, a:active, a:visited {
+  color: white;
+}

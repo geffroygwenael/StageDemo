@@ -1,7 +1,28 @@
-<div class="panel_buttons">
-<button [ngClass]="memberBtn" (click)="getAllUsers()" title="See all members">Members</button>
-<button [ngClass]="adminBtn" (click)="getAllAdmins()" title="See all admins">Admins</button>
+<div class="panel_top">
+  <div class="panel_buttons">
+    <button [ngClass]="memberBtn" (click)="getAllUsers()" title="See all members">Members</button>
+    <button [ngClass]="adminBtn" (click)="getAllAdmins()" title="See all admins">Admins</button>
+  </div>
+
+  <div class="panel_stat">
+    <span *ngIf="memberBtn== 'selected'">Total members : <b>{{displayUsers.length}}</b></span>
+    <span *ngIf="adminBtn== 'selected'">Total admins : <b>{{displayUsers.length}}</b></span>
+    <span>Current used : <b>{{activeUser.length}}</b></span>
+  </div>
 </div>
+
+<div class="panel_sub_head">
+  <h2 *ngIf="memberBtn == 'selected'">Members</h2>
+  <h2 *ngIf="adminBtn == 'selected'">Admins</h2>
+  <button class="subhead_btn btn_purple" type="button">Add new</button>
+  <button class="subhead_btn btn_white" type="button" *ngIf="memberBtn == 'selected'">Import members</button>
+  <button class="subhead_btn btn_white" type="button">
+    <span *ngIf="memberBtn == 'selected'">Export members (Excel)</span>
+    <span *ngIf="adminBtn == 'selected'">Export admins (Excel)</span>
+  </button>
+  <button class="subhead_btn btn_purple left" type="button"><fa-icon [icon]="faLeft"></fa-icon>Filter</button>
+</div>
+
 
 <table>
   <thead>
@@ -30,7 +51,7 @@
       <a class="operations" href="#" title="Edit user {{u.name}}"><fa-icon [icon]="faEdit"></fa-icon></a>
       <a class="operations" href="#" title="Delete user {{u.name}}"><fa-icon [icon]="faTrash"></fa-icon></a>
     </td>
-    <td class="td_centered"><a class="ad_btn_login" href="#">login</a></td>
+    <td class="td_centered"><a class="ad_btn_login" href="#" title="View {{u.name}}'s log chart">login</a></td>
   </tr>
   </tbody>
 </table>

@@ -1,20 +1,28 @@
 /**************************************************************
                        NAV BAR STRUCTURE                      *
 ***************************************************************/
+@media (max-width: 700px) {
+  input {display:none;}
+}
+
+@media (max-width: 1200px) {
+  ul {grid-template-columns: 10% 50% 5% auto;}
+}
+
 /* balises */
 nav {height: 80px;}
 
 ul {
   display: -ms-grid;
   display: grid;
-  grid-template-columns: 200px 4fr 1fr 250px;
+  grid-template-columns: 10% 75% 5% 10%;
 }
 
 button {padding: 0 5px;}
-input {width: 375px;padding: 10px 15px;}
+input {width: 20%;padding: 10px 15px;}
 
 /* classes */
-.nav_logo {display: block;height: 80px;width: 200px;}
+.nav_logo {display: block;height: 80px;;}
 
 .nav_notification {justify-self: end;align-self: center;}
 
@@ -38,7 +46,6 @@ li:not(.nav_logo) {
 }
 li:last-child {
   display: block;
-  width: 250px;
   justify-self: center;
 }
 
@@ -48,8 +55,7 @@ li:last-child {
 /* balises */
 li {list-style: none;}
 
-/* classes */
-.navbar {background-color: var(--dark-purple);color: white;}
+
 
 .nav_logo {font: 40px/65px var(--ft-title);text-align: center;}
 

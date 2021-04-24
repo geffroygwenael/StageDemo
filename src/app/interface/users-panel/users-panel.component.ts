@@ -3,7 +3,7 @@ import {User} from '../../entity/user';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
-import {viewClassName} from '@angular/compiler';
+import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-users-panel',
@@ -11,7 +11,7 @@ import {viewClassName} from '@angular/compiler';
   styleUrls: ['./users-panel.component.css']
 })
 export class UsersPanelComponent implements OnInit {
-
+  faLeft = faChevronLeft;
   faEdit = faPen;
   faTrash = faTrash;
   faView = faEdit;
@@ -929,6 +929,7 @@ export class UsersPanelComponent implements OnInit {
     }];
 
   displayUsers: User[] = [];
+  activeUser: User[] = [];
   memberBtn = 'selected';
   adminBtn = '';
 
@@ -936,15 +937,19 @@ export class UsersPanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayUsers = this.users;
+    this.activeUser = this.getActiveUsers();
   }
 
-
+   /******************** WE GET ALL USERS (Active & inactive) ****************/
   getAllUsers(): User[] {
     this.adminBtn = '';
     this.memberBtn = 'selected';
-    return this.displayUsers = this.users;
+    this.displayUsers = this.users;
+    this.getActiveUsers();
+    return this.displayUsers ;
   }
 
+  /******************** WE GET ALL ADMINS (Active & inactive) ****************/
   getAllAdmins(): User[]
   {
     const adminList = [];
@@ -953,10 +958,23 @@ export class UsersPanelComponent implements OnInit {
     }
     this.adminBtn = 'selected';
     this.memberBtn = '';
-    return this.displayUsers = adminList;
+    this.displayUsers = adminList;
+    this.getActiveUsers();
+    return this.displayUsers;
   }
 
 
+  /******************** WE GET ALL ACTIVE USERS ****************/
+  getActiveUsers(): User[]
+  {
+    const activeUsers = [];
+    for (const u of this.displayUsers) {
+      if (u.isActive) { activeUsers.push(u); }
+    }
+    return this.activeUser = activeUsers;
+  }
+
+  /******************** SORT ONCLICK ON TABLE HEADER ****************/
   sortBy(p: string): User[] {
     let hasBeenSort = false;
     this.displayUsers.sort((a, b) => {

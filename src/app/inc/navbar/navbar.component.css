@@ -1,3 +1,8 @@
+ul             { display: -ms-grid;display: grid; grid-template-columns: 10% 75% 5% 10%; }
+
+
+
+
 /**************************************************************
                        NAV BAR STRUCTURE                      *
 ***************************************************************/
@@ -9,81 +14,5 @@
   ul {grid-template-columns: 10% 50% 5% auto;}
 }
 
-/* balises */
-nav {height: 80px;}
-
-ul {
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: 10% 75% 5% 10%;
-}
-
-button {padding: 0 5px;}
-input {width: 20%;padding: 10px 15px;}
-
-/* classes */
-.nav_logo {display: block;height: 80px;;}
-
-.nav_notification {justify-self: end;align-self: center;}
-
-.nav_usermenu {
-  display: -ms-grid;
-  display: grid;
-  grid-template-columns: 1fr 30px;
-  grid-template-rows: 1fr 1fr;
-}
 
 
-
-.nu_name, .nu_role {grid-column: 1;padding: 0 10px;height: 20px;}
-.nu_name {grid-row: 1;}
-.nu_role {grid-row: 2;}
-.nu_menu {grid-row: 1;grid-row-end: 3;height: 40px;}
-
-/* pseudo-elements */
-li:not(.nav_logo) {
-  padding: 20px;
-}
-li:last-child {
-  display: block;
-  justify-self: center;
-}
-
-/**************************************************************
-                       NAV BAR STYLE                          *
-***************************************************************/
-/* balises */
-li {list-style: none;}
-
-
-
-.nav_logo {font: 40px/65px var(--ft-title);text-align: center;}
-
-.navbar_inp_search {
-  border-radius: 3px;border: none;
-  box-shadow: 0 0 2px rgba(255, 255, 255, 0.4);
-  font: 12px var(--font-aw);
-}
-
-.nav_btn_notification,
-.nav_btn_usermenu {
-  border: none;
-  background-color: transparent;
-  text-align: center;
-  font-size: 17px;
-  color: white;
-}
-
-.user_picture {float:left;}
-
-.nu_name,
-.nu_role {
-  font: bold 11px/20px var(--ft-text);
-  text-overflow: ellipsis;white-space: nowrap;overflow: hidden;
-}
-
-.nu_menu {line-height: 40px;}
-
-/* pseudo-elements */
-button:focus {box-shadow: 0 0 2px rgba(255, 255, 255, 0.5);}
-nav input::placeholder {color: lightgrey;}

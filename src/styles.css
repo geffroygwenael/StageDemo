@@ -140,12 +140,20 @@ nav input::placeholder  { color: lightgrey;}
 /**************************************************************
  *                      GENERAL RESPONSIVE                    *
  **************************************************************/
-@media (max-width: 765px) {
-  /* general*/
+@media (max-width: 1200px) {
+  app-sidebar     { position:relative; }
   .container      { display: flex;flex-direction: column; }
-  app-navbar      { height:4%; }
+  app-navbar      { height:4%; position:relative; z-index:50}
   app-sidebar     { height:auto;padding:0; }
   app-users-panel { overflow: unset; }
+  .panel_top      { margin: 2.5rem 0 0 0  }
+
+}
+
+
+@media (max-width: 767px) {
+  /* general*/
+
   /* user table */
   table         { order:3; }
   th            { text-align: center; }
@@ -167,7 +175,6 @@ nav input::placeholder  { color: lightgrey;}
 
 
 @media (max-width: 400px) {
-  app-sidebar           { position:relative; }
   table                 { padding:0.3rem 0.5rem; }
   thead, thead a        { font-size: 0.7rem; }
   .ad_btn_login         { width:100%; }

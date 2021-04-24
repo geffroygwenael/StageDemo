@@ -7,7 +7,6 @@ import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { faCalendarDay } from '@fortawesome/free-solid-svg-icons';
-import { faArrowDown } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-sidebar',
@@ -23,14 +22,18 @@ export class SidebarComponent implements OnInit {
   faReports   = faBars;
   faLogs      = faSignInAlt;
   faProjets   = faCalendarDay;
-  faDeploy    = faArrowDown;
+  displayed   = '';
 
-
-  resDisplay: any;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  resDisplay(): string
+  {
+    if (this.displayed === 'displayed') { this.displayed = ''; }
+    else {this.displayed = 'displayed'; }
+    return this.displayed ;
+  }
 }

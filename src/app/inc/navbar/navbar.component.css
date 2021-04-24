@@ -1,26 +1,26 @@
 /**************************************************************
                   *     NAV BAR SPE CSS         *             *
 ***************************************************************/
-ul   { display: -ms-grid;display: grid; grid-template-columns: 10% 70% 5% 15%; align-items: center }
+ul   { display: -ms-grid;display: grid; grid-template-columns: 10% 70% 5% 15%; align-items: center; }
 li   { padding: 0.6rem 1.2rem;}
-span { display:block;font: bold 0.7rem var(--ft-text);padding: 2px 10px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+span { display:block;font: bold 0.7rem var(--ft-text);padding: 0.12rem 0.62rem;text-overflow: ellipsis;white-space: nowrap;overflow: hidden; }
 
 
 /**************************************************************
                        NAV BAR RESPONSIVE                     *
 ***************************************************************/
-@media (max-width: 1560px) {  .nav_usermenu { max-width:60%; } }
+@media (max-width: 1560px) { .nav_usermenu { max-width:60%; } }
 @media (max-width: 1350px) { ul  {grid-template-columns: 15% 60% 5% 20%;} }
-@media (max-width: 970px) {  ul  {grid-template-columns: 15% 50% 5% 30%;} }
-@media (max-width: 700px) {
-  ul                                       {display: flex}
-  .nav_input, input, .nav_usermenu .role   {display:none;}
-  .nav_usermenu .name                      {display:block;}
-  .user_block                              {padding:0;margin-left: auto}
+@media (max-width: 970px)  { ul  {grid-template-columns: 15% 50% 5% 30%;} }
+@media (max-width: 700px)  {
+  ul                                       { display: flex; }
+  .nav_input, input, .nav_usermenu .role   { display:none; }
+  .nav_usermenu .name                      { display:block; }
+  .user_block                              { padding:0;margin-left: auto; }
 }
 @media (max-width: 400px) {
   .nav_notification       { display:none;}
-  .nav_logo, .user_block  { display:inline-block;padding: 0.5rem ;vertical-align: center }
+  .nav_logo, .user_block  { display:inline-block;padding: 0.5rem ;vertical-align: center; }
   .name                   { max-width: 90%; }
   .user_block             { max-width: 60%; }
 }

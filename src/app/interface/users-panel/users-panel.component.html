@@ -29,8 +29,8 @@
   <tr>
     <th>Photo</th>
     <th> <a (click)="sortBy('name')">Member name</a> </th>
-    <th> <a (click)="sortBy('mobile')">Mobile</a> </th>
-    <th> <a (click)="sortBy('email')">Email</a> </th>
+    <th class="small_res"> <a (click)="sortBy('mobile')">Mobile</a> </th>
+    <th class="small_res"> <a (click)="sortBy('email')">Email</a> </th>
     <th class="td_centered">Status</th>
     <th class="td_centered">Operation</th>
     <th class="td_centered">Action</th>
@@ -40,8 +40,8 @@
   <tr *ngFor="let u of displayUsers">
     <td><img class="user_picture" src="{{u.picture}}" alt=""></td>
     <td>{{u.name}}</td>
-    <td>{{u.mobile}}</td>
-    <td>{{u.email}}</td>
+    <td class="small_res">{{u.mobile}}</td>
+    <td class="small_res">{{u.email}}</td>
     <td class="td_centered">
       <span class="active" *ngIf="u.isActive ; else elseBlock">active</span>
       <ng-template #elseBlock> <span class="inactive">inactive</span></ng-template>

@@ -1,23 +1,16 @@
-app-navbar      {
-  grid-column: 1 / 3 ; grid-row: 1;
-  background-color: var(--dark-purple);
-  color: white;
-}
-
-app-sidebar     {
-  grid-column: 1 / 2 ; grid-row: 2 / 2;
-  height:calc(100vh - 80px);
-  padding: 20px 0;
-  background-color: var(--mid-purple);}
 
 
-app-users-panel {
-  grid-column: 2 ;grid-row: 2;
-  height: calc(100vh - 80px);
-  padding: 20px;
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  overflow: auto;
-  background: var(--bg-color);
-}
+
+
+
+
+
+
+
+
+
+/**************************************************************
+ *                    NO CSS HERE                             *
+ *                  CHECK STYLE.CSS                           *
+ *              TO GET COMPONENT STYLE                        *
+ **************************************************************/

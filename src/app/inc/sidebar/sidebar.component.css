@@ -19,6 +19,4 @@ a:hover       { background-color: var(--light-purple); border-left:3px solid whi
   .sidebar_btn          { display:block;position:absolute;bottom:0;z-index:9}
   .sidebar_btn fa-icon  { margin:0;}
   .displayed            { top:0 ; transition: all ease 0.5s}
-
-
 }

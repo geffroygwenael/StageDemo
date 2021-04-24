@@ -44,7 +44,15 @@ td    { padding:5px 0;}
 .panel_stat span             { display:block;}
 .panel_buttons button        { width:100px;padding: 15px 5px;position:relative; }
 
-.panel_sub_head         { display: -webkit-box;display: -ms-flexbox;display: -webkit-flex;display:flex;padding:10px;justify-content: flex-start; grid-row: 2;grid-column:1 ;grid-column-end: 3 }
+.panel_sub_head         {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display:flex;
+  padding:10px;
+  justify-content: flex-start;
+
+}
 .panel_sub_head h2      { padding:0 20px; width: 9rem}
 .subhead_btn:not(.left) { padding: 10px 20px;margin: 0 10px }
 .panel_sub_head .left   { margin-left: auto;padding:10px 20px 10px 10px; }

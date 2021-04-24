@@ -51,7 +51,6 @@ td    { padding:5px 0;}
   display:flex;
   padding:10px;
   justify-content: flex-start;
-
 }
 .panel_sub_head h2      { padding:0 20px; width: 9rem}
 .subhead_btn:not(.left) { padding: 10px 20px;margin: 0 10px }
@@ -89,7 +88,7 @@ thead, thead a              { text-align: left; font-weight: bold }
 .panel_stat           { text-align: right;}
 .panel_stat b         { color:var(--d-grey-color); }
 .panel_buttons button { background-color: transparent;}
-.selected             { font-weight: bold}
+.selected             { font-weight: bold; }
 
 .subhead_btn          { border-radius: 5px;font-weight: bold;}
 .btn_white            { background-color: var(--w-bg-color);border:1px solid rgba(var(--dark-p-rgb),0.4); }

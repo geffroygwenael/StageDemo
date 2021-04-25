@@ -381,10 +381,13 @@ export class UsersPanelComponent implements OnInit {
       isAdmin: true
     }];
 
-  displayUsers: User[] = [];
-  activeUser: User[] = [];
-  memberBtn = 'selected';
-  adminBtn = '';
+  displayUsers: User[]  = [];
+  activeUser: User[]    = [];
+  inactiveUser: User[]  = [];
+  memberBtn     = 'selected';
+  adminBtn      = '';
+  filterSwitch  = 'filterOff';
+  status: string;
 
   constructor() { }
 
@@ -427,6 +430,16 @@ export class UsersPanelComponent implements OnInit {
     return this.activeUser = activeUsers;
   }
 
+  /******************** WE GET ALL INACTIVE USERS ****************/
+  getInactiveUsers(): User[]
+  {
+    const inactiveUsers = [];
+    for (const u of this.displayUsers) {
+      if (!u.isActive) { inactiveUsers.push(u); }
+    }
+    return this.inactiveUser = inactiveUsers;
+  }
+
   /******************** SORT ONCLICK ON TABLE HEADER ****************/
   sortBy(p: string): User[] {
     let hasBeenSort = false;
@@ -436,7 +449,24 @@ export class UsersPanelComponent implements OnInit {
         return -1;
       }
     });
-    if (hasBeenSort === false)  {this.displayUsers.sort().reverse(); }
+    if (!hasBeenSort)  {this.displayUsers.sort().reverse(); }
     return this.displayUsers;
+  }
+
+  /******************** DISPLAY FILTER BOX ON CLICK ****************/
+  FilterSwitcher(): void {
+    if (this.filterSwitch === 'filterOn')  { this.filterSwitch = 'filterOff'; }
+    else { this.filterSwitch = 'filterOn'; }
+  }
+
+  /******************** FILTER : USER BY STATUS ****************/
+  FilterByStatus(p: string): User[]
+  {
+    if (this.memberBtn === 'selected') {this.displayUsers = this.getAllUsers(); }
+    else { this.displayUsers = this.getAllAdmins(); }
+
+    if (p === 'active')   { return this.displayUsers = this.getActiveUsers(); }
+    else if (p === 'inactive') {return this.displayUsers = this.getInactiveUsers(); }
+    else {return this.displayUsers; }
   }
 }

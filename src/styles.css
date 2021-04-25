@@ -79,7 +79,10 @@ nav,.nav_logo         { height: 5rem; }
 .active, .inactive   { display:block;padding:0.1rem 0.3rem; }
 .active, .inactive   { width: 4.8rem; }
 .ad_btn_login        { width:3.2rem;padding:0.2rem 0.3rem; }
-/* ids */
+
+.filterBox           { padding:0.5rem; }
+.filterBox input     { margin: 0 0.2rem 0 0 }
+  /* ids */
 
 /* pseudo-elements */
 .selected:after              { content: ""; display: block; height: 0.2rem;width: 6.25rem; position: absolute;bottom: 0;left: 0; }

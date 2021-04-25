@@ -5,8 +5,8 @@
   </div>
 
   <div class="panel_stat">
-    <span *ngIf="memberBtn== 'selected'">Total members : <b>{{displayUsers.length}}</b></span>
-    <span *ngIf="adminBtn== 'selected'">Total admins : <b>{{displayUsers.length}}</b></span>
+    <span *ngIf="memberBtn== 'selected'">Total members : <b>{{users.length}}</b></span>
+    <span *ngIf="adminBtn== 'selected'">Total admins : <b>{{getAllAdmins().length}}</b></span>
     <span>Current used : <b>{{activeUser.length}}</b></span>
   </div>
 </div>
@@ -20,9 +20,19 @@
     <span *ngIf="memberBtn == 'selected'">Export members (Excel)</span>
     <span *ngIf="adminBtn == 'selected'">Export admins (Excel)</span>
   </button>
-  <button class="subhead_btn btn_purple left" type="button"><fa-icon [icon]="faLeft"></fa-icon>Filter</button>
+  <button class="subhead_btn btn_purple left" type="button" (click)="FilterSwitcher()"><fa-icon [icon]="faLeft"></fa-icon>Filter</button>
 </div>
-
+<div class="filterBox" [ngClass]="filterSwitch" [(ngModel)]="status">
+  <div class="filterfield" >
+    <input type="radio" name="filter_status" id="ActiveOnly" (click)="FilterByStatus('active')"><label for="ActiveOnly">Active members</label>
+  </div>
+  <div class="filterfield">
+    <input type="radio" name="filter_status" id="InactiveOnly" (click)="FilterByStatus('inactive')"><label for="InactiveOnly">Inactive members</label>
+  </div>
+  <div class="filterfield">
+    <input type="radio" name="filter_status" id="AllMembers" (click)="FilterByStatus('all')"><label for="AllMembers">Display all members</label>
+  </div>
+</div>
 
 <table>
   <thead>

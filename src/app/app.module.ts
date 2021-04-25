@@ -7,6 +7,7 @@ import { NavbarComponent } from './inc/navbar/navbar.component';
 import { SidebarComponent } from './inc/sidebar/sidebar.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import { UsersPanelComponent } from './interface/users-panel/users-panel.component';
+import {FormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { UsersPanelComponent } from './interface/users-panel/users-panel.compone
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

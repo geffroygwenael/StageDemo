@@ -4,6 +4,7 @@ import { faTrash } from '@fortawesome/free-solid-svg-icons';
 import { faPen } from '@fortawesome/free-solid-svg-icons';
 import { faEdit } from '@fortawesome/free-solid-svg-icons';
 import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
+import { faArrowsAltV } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-users-panel',
@@ -11,10 +12,11 @@ import { faChevronLeft } from '@fortawesome/free-solid-svg-icons';
   styleUrls: ['./users-panel.component.css']
 })
 export class UsersPanelComponent implements OnInit {
-  faLeft = faChevronLeft;
-  faEdit = faPen;
+  faLeft  = faChevronLeft;
+  faEdit  = faPen;
   faTrash = faTrash;
-  faView = faEdit;
+  faView  = faEdit;
+  faArrow = faArrowsAltV;
 
 
   users: User[] =  [

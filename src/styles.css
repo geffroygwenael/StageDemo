@@ -76,8 +76,7 @@ nav,.nav_logo         { height: 5rem; }
 .user_picture                 { width: 2.4rem;height: 2.4rem; }
 
 .operations          { margin: 0 1em; }
-.active, .inactive   { display:block;padding:0.1rem 0.3rem; }
-.active, .inactive   { width: 4.8rem; }
+.active, .inactive   { display:block;width: 4.8rem;padding:0.1rem 0.3rem; }
 .ad_btn_login        { width:3.2rem;padding:0.2rem 0.3rem; }
 
 .filterBox           { padding:0.5rem; margin:0 0 0.5rem 0;}

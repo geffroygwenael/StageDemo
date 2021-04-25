@@ -387,7 +387,6 @@ export class UsersPanelComponent implements OnInit {
   memberBtn     = 'selected';
   adminBtn      = '';
   filterSwitch  = 'filterOff';
-  status: string;
 
   constructor() { }
 
@@ -408,13 +407,15 @@ export class UsersPanelComponent implements OnInit {
   /******************** WE GET ALL ADMINS (Active & inactive) ****************/
   getAllAdmins(): User[]
   {
-    const adminList = [];
-    for (const u of this.users) {
-      if (u.isAdmin) { adminList.push(u); }
+    if (this.adminBtn === '') {
+      const adminList = [];
+      for (const u of this.users) {
+        if (u.isAdmin) { adminList.push(u); }
+        this.displayUsers = adminList;
+      }
     }
+    if (this.memberBtn === 'selected') {  this.memberBtn = ''; }
     this.adminBtn = 'selected';
-    this.memberBtn = '';
-    this.displayUsers = adminList;
     this.getActiveUsers();
     return this.displayUsers;
   }
@@ -449,7 +450,7 @@ export class UsersPanelComponent implements OnInit {
         return -1;
       }
     });
-    if (!hasBeenSort)  {this.displayUsers.sort().reverse(); }
+    if (!hasBeenSort)  {this.displayUsers.sort().reverse(); console.log('hey ?'); }
     return this.displayUsers;
   }
 
@@ -462,8 +463,8 @@ export class UsersPanelComponent implements OnInit {
   /******************** FILTER : USER BY STATUS ****************/
   FilterByStatus(p: string): User[]
   {
-    if (this.memberBtn === 'selected') {this.displayUsers = this.getAllUsers(); }
-    else { this.displayUsers = this.getAllAdmins(); }
+    if (this.memberBtn === 'selected')      { this.displayUsers = this.getAllUsers(); }
+    else if (this.adminBtn === 'selected')  { this.adminBtn = ''; this.displayUsers = this.getAllAdmins(); }
 
     if (p === 'active')   { return this.displayUsers = this.getActiveUsers(); }
     else if (p === 'inactive') {return this.displayUsers = this.getInactiveUsers(); }

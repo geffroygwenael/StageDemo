@@ -382,7 +382,7 @@ export class UsersPanelComponent implements OnInit {
     }];
 
   displayUsers: User[]  = [];
-  activeUser: User[]    = [];
+  activeUser: number;
   inactiveUser: User[]  = [];
   memberBtn     = 'selected';
   adminBtn      = '';
@@ -392,7 +392,7 @@ export class UsersPanelComponent implements OnInit {
 
   ngOnInit(): void {
     this.displayUsers = this.users;
-    this.activeUser = this.getActiveUsers();
+    this.activeUser = this.getActiveUsers().length;
   }
 
    /******************** WE GET ALL USERS (Active & inactive) ****************/
@@ -400,7 +400,7 @@ export class UsersPanelComponent implements OnInit {
     this.adminBtn = '';
     this.memberBtn = 'selected';
     this.displayUsers = this.users;
-    this.getActiveUsers();
+    this.activeUser = this.getActiveUsers().length;
     return this.displayUsers ;
   }
 
@@ -413,13 +413,13 @@ export class UsersPanelComponent implements OnInit {
         if (u.isAdmin) { adminList.push(u); }
         this.displayUsers = adminList;
       }
+      this.activeUser = this.getActiveUsers().length;
     }
-    if (this.memberBtn === 'selected') {  this.memberBtn = ''; }
+
     this.adminBtn = 'selected';
-    this.getActiveUsers();
+    if (this.memberBtn === 'selected') {  this.memberBtn = ''; }
     return this.displayUsers;
   }
-
 
   /******************** WE GET ALL ACTIVE USERS ****************/
   getActiveUsers(): User[]
@@ -428,7 +428,7 @@ export class UsersPanelComponent implements OnInit {
     for (const u of this.displayUsers) {
       if (u.isActive) { activeUsers.push(u); }
     }
-    return this.activeUser = activeUsers;
+    return activeUsers;
   }
 
   /******************** WE GET ALL INACTIVE USERS ****************/

@@ -450,7 +450,7 @@ export class UsersPanelComponent implements OnInit {
         return -1;
       }
     });
-    if (!hasBeenSort)  {this.displayUsers.sort().reverse(); console.log('hey ?'); }
+    if (!hasBeenSort)  {this.displayUsers.sort().reverse(); }
     return this.displayUsers;
   }
 

@@ -106,16 +106,16 @@ a              { color: white; text-decoration: none;}
 li             { list-style: none; }
 button         { border:none; }
 td             { border-bottom: 0.1rem solid rgba(0,0,0,0.02); }
-input[type='search']   { border-radius: 0.18rem;border: none; box-shadow: 0 0 0.12rem rgba(255, 255, 255, 0.4);font: 0.75rem var(--font-aw);}
-thead fa-icon          { visibility: hidden;opacity: 0;transition: all 0.3s ease;}
+input[type='search']   { border-radius: 0.18rem;border: none; box-shadow: 0 0 0.12rem rgba(255, 255, 255, 0.4);font: 0.75rem var(--font-aw); }
+thead fa-icon          { visibility: hidden;opacity: 0;transition: all 0.3s ease; }
 
 table, .panel_buttons       { border-spacing: 0;border-radius: 0.3rem;background-color: var(--w-bg-color);box-shadow: 0 0 0.3rem rgba(150,150,150,0.2);font-size:0.75rem; }
-thead, thead a, .panel_stat { color:var(--grey-color);font: 0.87rem var(--ft-text);}
+thead, thead a, .panel_stat { color:var(--grey-color);font: 0.87rem var(--ft-text); }
 thead, thead a              { text-align: left; font-weight: bold; }
 
 /* classes */
-.nav_logo             { font: 2.5rem var(--ft-title);text-align: center;}
-.nav_btn_notification,.nav_btn_usermenu { border: none; background-color: transparent; text-align: center; font-size: 1rem; color: white;}
+.nav_logo             { font: 2.5rem var(--ft-title);text-align: center; }
+.nav_btn_notification,.nav_btn_usermenu { border: none; background-color: transparent; text-align: center; font-size: 1rem; color: white; }
 
 .panel_stat           { text-align: right;}
 .panel_stat b         { color:var(--d-grey-color); }
@@ -134,7 +134,7 @@ thead, thead a              { text-align: left; font-weight: bold; }
 .active, .inactive    { border-radius: 0.8rem;text-transform: capitalize;font-weight: bold; }
 .active               { background-color: var(--active-bubble); color: var(--active-color); }
 .inactive             { background-color: var(--inactive-bubble); color: var(--inactive-color); }
-.ad_btn_login         { background-color: var(--mid-purple);border-radius: 0.3rem;text-align: center;font: 0.68rem var(--ft-text);color:var(--w-bg-color) }
+.ad_btn_login         { background-color: var(--mid-purple);border-radius: 0.3rem;text-align: center;font: 0.68rem var(--ft-text);color:var(--w-bg-color); }
 
 
 .filterBox            {color:var(--w-bg-color); background-color: var(--light-purple);border-radius: 0.3rem;}

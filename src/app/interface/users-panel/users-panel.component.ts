@@ -18,7 +18,7 @@ export class UsersPanelComponent implements OnInit {
   faView  = faEdit;
   faArrow = faArrowsAltV;
 
-
+  /* generate fake users */
   users: User[] =  [
     {
       id: 0,
@@ -383,7 +383,6 @@ export class UsersPanelComponent implements OnInit {
 
   displayUsers: User[]  = [];
   activeUser: number;
-  inactiveUser: User[]  = [];
   memberBtn     = 'selected';
   adminBtn      = '';
   filterSwitch  = 'filterOff';
@@ -438,7 +437,7 @@ export class UsersPanelComponent implements OnInit {
     for (const u of this.displayUsers) {
       if (!u.isActive) { inactiveUsers.push(u); }
     }
-    return this.inactiveUser = inactiveUsers;
+    return inactiveUsers;
   }
 
   /******************** SORT ONCLICK ON TABLE HEADER ****************/

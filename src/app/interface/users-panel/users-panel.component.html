@@ -27,13 +27,13 @@
 <table>
   <thead>
   <tr>
-    <th>Photo</th>
+    <th class="th_picture">Photo</th>
     <th> <a (click)="sortBy('name')">Member name</a> </th>
     <th class="small_res"> <a (click)="sortBy('mobile')">Mobile</a> </th>
     <th class="small_res"> <a (click)="sortBy('email')">Email</a> </th>
-    <th class="td_centered">Status</th>
-    <th class="td_centered">Operation</th>
-    <th class="td_centered">Action</th>
+    <th class="th_status">Status</th>
+    <th class="th_operation td_centered">Operation</th>
+    <th class="th_action td_centered">Action</th>
   </tr>
   </thead>
   <tbody>
@@ -51,7 +51,7 @@
       <a class="operations" href="#" title="Edit user {{u.name}}"><fa-icon [icon]="faEdit"></fa-icon></a>
       <a class="operations" href="#" title="Delete user {{u.name}}"><fa-icon [icon]="faTrash"></fa-icon></a>
     </td>
-    <td class="td_centered"><a class="ad_btn_login" href="#" title="View {{u.name}}'s log chart">login</a></td>
+    <td class="td_centered"><button class="ad_btn_login" type="button" title="View {{u.name}}'s log chart">login</button></td>
   </tr>
   </tbody>
 </table>

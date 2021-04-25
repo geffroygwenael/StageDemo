@@ -35,8 +35,8 @@ Specific css in : - navbar.component.css (ul, li, span & responsive)
 
 *               { box-sizing: border-box; padding: 0; margin: 0; font-family: var(--ft-text); }
 app-navbar      { grid-column: 1 / 3 ; grid-row: 1; background-color: var(--dark-purple); color: white; }
-app-sidebar     { grid-column: 1 / 2 ; grid-row: 2 / 2; height:calc(100vh - 80px); padding: 20px 0; background-color: var(--mid-purple);}
-app-users-panel { grid-column: 2 ;grid-row: 2; height: calc(100vh - 80px); padding: 20px; position:relative; display:flex; flex-direction:column; overflow: auto; background: var(--bg-color); }
+app-sidebar     { grid-column: 1 / 2 ; grid-row: 2 / 2; height:calc(100vh - 5rem); padding: 1.25rem 0; background-color: var(--mid-purple);}
+app-users-panel { grid-column: 2 ; grid-row: 2; height: calc(100vh - 5rem); padding: 1.25rem; overflow: auto; background: var(--bg-color);}
 
 
 /**************************************************************
@@ -44,9 +44,9 @@ app-users-panel { grid-column: 2 ;grid-row: 2; height: calc(100vh - 80px); paddi
  **************************************************************/
 
 /* html elements */
-table                 { width: 100%; padding:0.6rem 1.2rem; }
-th                    { padding:0.6rem 0; }
-td                    { padding:0.3rem 0; }
+table                 { width: 100%;padding:0.6rem 1.2rem; table-layout: fixed }
+th                    { padding:0.6rem 0;}
+td                    { padding:0.3rem 0;}
 button                { padding: 0 0.3rem; }
 input[type="search"]  { width: 40%;padding: 0.6rem 0.9rem; }
 
@@ -54,6 +54,7 @@ nav,.nav_logo         { height: 5rem; }
 /* classes */
 .container { display: -ms-grid;display: grid; grid-template-columns: 10% 90%; grid-template-rows: 5rem 1fr; }
 
+.th_picture, .th_status, .th_action   { width: 6rem; }
 
 .nav_logo           { display: block; }
 .nav_notification   { justify-self: end; }
@@ -72,16 +73,17 @@ nav,.nav_logo         { height: 5rem; }
 .panel_sub_head h2           { padding:0 1.2rem; width: 9rem}
 .panel_sub_head .left        { margin-left: auto;padding:0.6rem 1.2rem 0.6rem 0.6rem; }
 
-.user_picture                       { width: 2.4rem;height: 2.4rem; }
-.operations                         { margin: 0 1em; }
-.active, .inactive, .ad_btn_login   { display:block;padding:0.2rem 0.3rem;margin:auto; }
-.active, .inactive                  { width: 3.75rem; }
-.ad_btn_login                       { width:3.2rem; }
+.user_picture                 { width: 2.4rem;height: 2.4rem; }
+
+.operations          { margin: 0 1em; }
+.active, .inactive   { display:block;padding:0.1rem 0.3rem; }
+.active, .inactive   { width: 4.8rem; }
+.ad_btn_login        { width:3.2rem;padding:0.2rem 0.3rem; }
 /* ids */
 
 /* pseudo-elements */
-.selected:after   { content: ""; display: block; height: 0.2rem;width: 6.25rem; position: absolute;bottom: 0;left: 0; }
-li:last-child     { display: block;}
+.selected:after              { content: ""; display: block; height: 0.2rem;width: 6.25rem; position: absolute;bottom: 0;left: 0; }
+li:last-child                { display: block;}
 .subhead_btn:not(.left)      { padding: 0.6rem 1.2rem;margin: 0 0.6rem; }
 
 /* animations  */
@@ -115,17 +117,17 @@ thead, thead a              { text-align: left; font-weight: bold }
 
 .subhead_btn          { border-radius: 0.3rem;font-weight: bold;}
 .btn_white            { background-color: var(--w-bg-color);border:0.06rem solid rgba(var(--dark-p-rgb),0.4); }
-.btn_purple           { background-color: var(--mid-purple);color: var(--w-bg-color);border:0.06rem solid rgba(var(--dark-p-rgb),0.8); }
+.btn_purple           { background-color: var(--mid-purple);border:0.06rem solid rgba(var(--dark-p-rgb),0.8);color: var(--w-bg-color); }
 .left                 { font-weight: normal; }
 .subhead_btn fa-icon  { float:left;margin: 0.12rem 0.9rem 0 0;font-size: 0.68rem;}
 
 .td_centered          { text-align: center; }
 .user_picture         { object-fit: cover;-o-object-fit:cover;border-radius: 0.3rem; }
 .operations           { color: var(--light-purple);font-size: 0.9rem; }
-.active, .inactive    { border-radius: 0.5rem;text-transform: capitalize;font-weight: bold; }
+.active, .inactive    { border-radius: 0.8rem;text-transform: capitalize;font-weight: bold; }
 .active               { background-color: var(--active-bubble); color: var(--active-color); }
 .inactive             { background-color: var(--inactive-bubble); color: var(--inactive-color); }
-.ad_btn_login         { background-color: var(--mid-purple);border-radius: 0.3rem;text-align: center;font: 0.68rem var(--ft-text); }
+.ad_btn_login         { background-color: var(--mid-purple);border-radius: 0.3rem;text-align: center;font: 0.68rem var(--ft-text);color:var(--w-bg-color) }
 /* ids */
 
 /* pseudo-elements */
@@ -146,6 +148,7 @@ nav input::placeholder  { color: lightgrey;}
   app-sidebar     { height:auto;padding:0; }
   app-users-panel { overflow: unset; }
   .panel_top      { margin: 2.5rem 0 0 0  }
+  td              {overflow: auto}
 
 }
 

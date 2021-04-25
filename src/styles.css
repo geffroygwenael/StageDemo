@@ -88,9 +88,9 @@ nav,.nav_logo         { height: 5rem; }
 
 /* pseudo-elements */
 .selected:after              { content: ""; display: block; height: 0.2rem;width: 6.25rem; position: absolute;bottom: 0;left: 0; }
-li:last-child                { display: block;}
 .subhead_btn:not(.left)      { padding: 0.6rem 1.2rem;margin: 0 0.6rem; }
-.filterBox label:before     { display:inline-block;content:"";width:0.6rem;height:0.6rem;margin: 0 0.5rem 0 0}
+.filterBox label:before      { display:inline-block;content:"";width:0.6rem;height:0.6rem;margin: 0 0.5rem 0 0; }
+
 
 /* animations  */
 @keyframes onSelect {
@@ -141,11 +141,12 @@ thead, thead a              { text-align: left; font-weight: bold; }
 /* ids */
 
 /* pseudo-elements */
+h5:before                       { content:"⏤⏤ " }
 thead a:hover fa-icon           { visibility:visible;opacity:0.8;transition: opacity 0.3s ease; }
-.selected:after                 { background: var(--mid-purple); animation: onSelect 0.2s linear; }
-a:hover, button:hover           { cursor: pointer;}
-button:focus                    { box-shadow: 0 0 0.12rem rgba(255, 255, 255, 0.5);}
 nav input::placeholder          { color: lightgrey;}
+button:focus                    { box-shadow: 0 0 0.12rem rgba(255, 255, 255, 0.5);}
+a:hover, button:hover           { cursor: pointer;}
+.selected:after                 { background: var(--mid-purple); animation: onSelect 0.2s linear; }
 .filterBox label:before         { border:0.06rem solid;border-radius: 100% ; }
 .filterBox input:checked ~ label:before { box-shadow:inset 0 0 0 0.2rem var(--light-purple), inset 0 0 0 0.3rem var(--w-bg-color)}
 

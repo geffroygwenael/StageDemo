@@ -23,6 +23,7 @@
   <button class="subhead_btn btn_purple left" type="button" (click)="FilterSwitcher()"><fa-icon [icon]="faLeft"></fa-icon>Filter</button>
 </div>
 <div class="filterBox" [ngClass]="filterSwitch" [(ngModel)]="status">
+  <h5>By Status</h5>
   <div class="filterfield" >
     <input type="radio" name="filter_status" id="ActiveOnly" (click)="FilterByStatus('active')"><label for="ActiveOnly">Active members</label>
   </div>
